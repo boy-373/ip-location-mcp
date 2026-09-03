@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.boy-373/ip-location-mcp",
+  "name": "cn.pianam.mcp/ip-location-mcp",
   "title": "IP Location MCP",
   "description": "MCP server for IPv4 geolocation with Chinese output: country/region/city, ISP and ASN.",
   "version": "1.0.0",
