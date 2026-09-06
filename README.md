@@ -45,7 +45,7 @@ Add this to your MCP client's `mcpServers` configuration (Claude Desktop `claude
 
 - Primary source: **[ip-api.com](https://ip-api.com/)** — free endpoint with direct Chinese-language output.
 - Automatic fallback: **[ipwho.is](https://ipwho.is/)** (free, 10k requests/month) with built-in English→Chinese country/province mapping (all Chinese provinces + US/AU/JP/KR common regions).
-- Results cached for **24 hours** (geolocation barely changes); hosted endpoint rate-limited to **60 requests / minute / IP**.
+- Results cached for **24 hours** (geolocation barely changes); hosted endpoint rate-limited to **200 requests / minute / IP**.
 - No API key, no login; read-only lookups.
 
 ## 🐢 Self-hosting
@@ -69,7 +69,7 @@ No API keys or accounts are ever required.
 ## 🗂️ Files
 
 - `ip_lookup_mcp_server.py` — the MCP server (FastMCP, Streamable HTTP transport).
-- `rate_limit.py` — lightweight per-IP sliding-window rate-limit middleware (60 req/min default).
+- `rate_limit.py` — lightweight per-IP sliding-window rate-limit middleware (200 req/min default).
 - `requirements.txt` — `mcp`, `uvicorn`, `starlette`.
 - `server.json` — official MCP Registry manifest (remote server entry, ready to publish with `mcp-publisher`).
 - `smithery.yaml` / `glama.json` — directory listing metadata.
@@ -101,7 +101,7 @@ No API keys or accounts are ever required.
 - 返回国家/省份/城市、经纬度、时区、运营商、组织、AS 编号，中文输出。
 - 主数据源 ip-api.com（免费、中文直出），故障自动切换 ipwho.is（含中国省份拼音中文化映射）。
 
-**服务特性**：数据源全部为公开接口、无需注册/付费；服务端内存缓存、失败自动降级/切换备用通道；单 IP 限流 60 次/分钟。
+**服务特性**：数据源全部为公开接口、无需注册/付费；服务端内存缓存、失败自动降级/切换备用通道；单 IP 限流 200 次/分钟。
 
 **本地部署**：
 
