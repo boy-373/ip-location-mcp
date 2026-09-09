@@ -66,6 +66,14 @@ No API keys or accounts are ever required.
 
 ### 🐳 Self-host with Docker
 
+**Option A — pull the pre-built image (fastest, no build):**
+
+```bash
+docker run -d -p 8000:8000 --name ip-location-mcp ghcr.io/boy-373/ip-location-mcp:latest
+```
+
+**Option B — build from source:**
+
 ```bash
 git clone https://github.com/boy-373/ip-location-mcp.git
 cd ip-location-mcp
@@ -130,6 +138,10 @@ python ip_lookup_mcp_server.py
 **Docker 自托管**：
 
 ```bash
+# 方式一：直接拉预构建镜像（最快，无需构建）
+docker run -d -p 8000:8000 --name ip-location-mcp ghcr.io/boy-373/ip-location-mcp:latest
+
+# 方式二：从源码构建
 git clone https://github.com/boy-373/ip-location-mcp.git && cd ip-location-mcp
 docker build -t ip-location-mcp .
 docker run -d -p 8000:8000 --name ip-location-mcp ip-location-mcp
